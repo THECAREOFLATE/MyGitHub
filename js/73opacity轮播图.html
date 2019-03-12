@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#obox{
+				width: 810px;
+				height: 310px;
+				margin: 50px auto;
+				position: relative;
+			}
+			#obox img{
+				width: 810px;
+				height: 310px;
+				position: absolute;
+				opacity: 0;
+			}
+			#obox .img1{
+				opacity: 1;
+			}
+			#p1{
+				width: 810px;
+				height: 40px;				
+				text-indent: 32px;
+				line-height: 40px;	
+				background: rgba(0,0,0,0.3);
+				position: absolute;	
+				bottom: 0px;
+				left: 0px;		
+			}
+			#p1 a{
+				color: white;
+				text-decoration: none;
+			}
+			#list{
+				list-style: none;
+				position: absolute;
+				right: 30px;
+				bottom: 10px;
+			}
+			#list li{
+				float: left;
+				width: 20px;
+				height: 20px;
+				background: rgba(0,0,0,0.5);
+				border-radius: 100%;
+				text-align: center;
+				line-height: 20px;
+				margin-left: 10px;
+			}
+			#list span{
+				display: block;
+				width: 10px;
+				height: 10px;
+				background: white;
+				border-radius: 100%;
+				margin: 5px;
+			}
+			#list #span1{
+				background: blue;
+			}
+		</style>
+		<script src="js/move.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			window.onload = function(){
+				var obox = document.getElementById("obox");
+				var oimg = obox.getElementsByTagName("img");
+				var list = document.getElementById("list");
+				var ospan = list.getElementsByTagName("span");
+				var a1 = document.getElementById("a1");
+				var arr = ["1wdasrdfghasfdhgasfd","2结婚的风神股份就开始读后感空间都是空间都是","3的发烧友和国防生的开奖号股份的会计师股份对设计风格的手机号"];
+				//初始化
+				var i = 0;
+				var timer = setInterval(fn,3000);
+				function fn(){
+					i++;
+					if(i==oimg.length){
+						i=0;
+					}
+					text1();
+					tu();
+					opa();
+				}
+				function text1(){
+					a1.innerHTML = arr[i];
+				}
+				function tu(){
+					for(var j=0;j<oimg.length;j++){
+						ospan[j].style.background = "white";
+					}
+					ospan[i].style.background = "blue";
+				}
+				function opa(){
+					oimg[i].style.opacity = 0.5 ;
+					for(var j=0;j<oimg.length;j++){
+						if(i!=j){
+							oimg[j].style.opacity = 0 ;
+						}
+					}
+					move(oimg[i],"opacity",1,30);
+				}
+				obox.onmouseover = function(){
+					clearInterval(timer);
+					
+					console.log("移入")
+				}
+					//onmouseleave
+				obox.onmouseout = function(){
+					timer = setInterval(fn,3000);
+					
+					console.log("移出")
+				}
+				//浏览器失去焦点，停止轮播
+				window.onblur = function(){
+					clearInterval(timer);
+				}
+				window.onfocus =function(){
+					timer = setInterval(fn,3000);
+				}
+				//点击小图标
+				for(var k=0;k<ospan.length;k++){
+					ospan[k].index = k ;
+					ospan[k].onclick = function(){
+						i = this.index;
+						text1();
+						tu();
+						opa();
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="obox">
+			<img class="img1" src="img/aa1.jpg" />
+			<img src="img/aa2.jpg" />
+			<img src="img/aa3.jpg" />
+			<p id="p1"><a href="#" id="a1">水电费脚后跟速度快解放后可视对讲发货快圣诞节发货快圣诞节很快就</a></p>
+			<ul id="list">
+				<li><span id="span1"></span></li>
+				<li><span id=""></span></li>
+				<li><span id=""></span></li>
+			</ul>
+		</div>	
+	</body>
+</html>

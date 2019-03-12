@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			//3, 实现秒表功能, 包含时,分,秒,毫秒，点击按钮1开始计时，点击按钮2结束计时。
+			var timer ;
+			function btn1(){
+				var pp = document.getElementById("pp");
+				var hs =0 ;
+				var s =0 ;
+				var m = 0 ;
+				var h = 0;
+				timer = setInterval(function(){
+					hs+=100;
+					if(hs==1000){
+						hs=0;
+						s+=1;
+					}
+					if(s==60){
+						s=0;
+						m+=1;
+					}
+					if(m==60){
+						m=0;
+						h+=1;
+					}
+					pp.innerHTML = h+"时"+m+"分"+s+"秒"+hs; 
+				},100)
+			}
+			function btn2(){
+				clearInterval(timer);
+			}
+		</script>
+	</head>
+	<body>
+		<p id="pp">00时00分00秒0000</p>
+		<button onclick="btn1()">开始计时</button>
+		<button onclick="btn2()">结束计时</button>
+	</body>
+</html>

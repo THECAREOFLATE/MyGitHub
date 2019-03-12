@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				
+			}
+			a{
+				text-decoration: none;
+				color: black;
+			}
+			#list{
+				width: 1200px;
+				margin:  60px auto;
+				list-style: none;
+			}
+			#list li{
+				width: 119px;
+				height: 44px;
+				background: #ebeceb;
+				float: left;
+				margin-left: 1px;
+				text-align: center;
+				line-height: 44px;
+				position: relative;
+			}
+			div{
+				width: 280px;
+				padding:0px 20px;	
+				background: #105285;
+				position: absolute;
+				top: 44px;
+				left: 0;
+				height: 0px;
+				overflow: hidden;
+			}
+			div a{
+				width: 140px;
+				height: 44px;
+				float: left;
+				background: #105285;
+				color: white;
+				text-align: left;
+				text-indent: 10px;
+			}
+			div a:hover{
+				background: #0f5c97;		
+			}
+			.box10{
+				left: -180px;
+			}
+		</style>
+		<script src="js/move.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			window.onload = function(){
+				var oli = document.getElementsByTagName("li");
+				//初始化
+				oli[0].style.background = "#003e6d";
+				oli[0].getElementsByTagName("a")[0].style.color = "white";
+				for(var i=1;i<oli.length;i++){
+					oli[i].onmouseover = function(){
+						for(var j=0;j<oli.length;j++){
+							oli[j].style.background = "#ebeceb";
+							oli[j].getElementsByTagName("a")[0].style.color = "black";
+						}
+						this.style.background = "#003e6d";
+						this.getElementsByTagName("a")[0].style.color = "white";
+						var n = Math.ceil((this.getElementsByTagName("a").length-1)/2);//有几行内容
+						console.log(n);
+						this.getElementsByTagName("div")[0].style.padding = "20px";
+						move(this.getElementsByTagName("div")[0],"height",n*44,30);
+						
+					}
+					oli[i].onmouseout = function(){
+						move(this.getElementsByTagName("div")[0],"height",0,10);
+						this.getElementsByTagName("div")[0].style.padding = "0px 20px";
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<ul id="list">
+			<li>
+				<a href="#">网站首页</a>
+			</li>
+			<li>
+				<a href="#">网站首页</a>
+				<div>
+					<a href="#">学校概括</a>
+					<a href="#">学校概括</a>
+					<a href="#">学校概括</a>
+					<a href="#">学校概括</a>
+					<a href="#">学校概括</a>
+					<a href="#">学校概括</a>
+					<a href="#">学校概括</a>
+				</div>
+			</li>
+			<li>
+				<a href="#">网站首页</a>
+				<div>
+					<a href="#">学校概括</a>
+					<a href="#">学校概括</a>
+					<a href="#">学校概括</a>
+					
+				</div>
+			</li>
+			<li>
+				<a href="#">网站首页</a>
+				<div>
+					<a href="#">学校概括</a>
+					<a href="#">学校概括</a>
+					<a href="#">学校概括</a>
+					<a href="#">学校概括</a>
+					<a href="#">学校概括</a>
+					<a href="#">学校概括</a><a href="#">学校概括</a><a href="#">学校概括</a><a href="#">学校概括</a>
+				</div>
+			</li>
+			<li>
+				<a href="#">网站首页</a>
+				<div>
+					<a href="#">学校概括</a>
+					<a href="#">学校概括</a>
+					<a href="#">学校概括</a>
+					<a href="#">学校概括</a>
+					
+				</div>
+			</li>
+			<li>
+				<a href="#">网站首页</a>
+				<div>
+					<a href="#">学校概括</a>
+					<a href="#">学校概括</a>
+					<a href="#">学校概括</a>
+					<a href="#">学校概括</a>
+					<a href="#">学校概括</a>
+				</div>
+			</li>
+			<li>
+				<a href="#">网站首页</a>
+				<div>
+					<a href="#">学校概括</a>
+					<a href="#">学校概括</a>
+					<a href="#">学校概括</a>
+					<a href="#">学校概括</a>
+					<a href="#">学校概括</a>
+					<a href="#">学校概括</a>
+				</div>
+			</li>
+			<li>
+				<a href="#">网站首页</a>
+				<div>
+					<a href="#">学校概括</a>
+					<a href="#">学校概括</a>
+					<a href="#">学校概括</a>
+					<a href="#">学校概括</a>
+					<a href="#">学校概括</a>
+					<a href="#">学校概括</a>
+					<a href="#">学校概括</a>
+				</div>
+			</li>
+			<li>
+				<a href="#">网站首页</a>
+				<div>
+					<a href="#">学校概括</a>
+					<a href="#">学校概括</a>
+					<a href="#">学校概括</a>
+					<a href="#">学校概括</a>
+					<a href="#">学校概括</a>
+					<a href="#">学校概括</a>
+					<a href="#">学校概括</a>
+					<a href="#">学校概括</a>
+					<a href="#">学校概括</a>
+				</div>
+			</li>
+			<li>
+				<a href="#">网站首页</a>
+				<div class="box10">
+					<a href="#">学校概括</a>
+					<a href="#">学校概括</a>
+					<a href="#">学校概括</a>
+					<a href="#">学校概括</a>
+					<a href="#">学校概括</a>
+				</div>
+			</li>
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				background: url(../css/vip/img/1138171116-221315989622853650-221315989622857754-1_235x297_90.jpg) no-repeat;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var btn1 = document.getElementById("btn1");
+				var btn2 = document.getElementById("btn2");
+				var b= document.getElementsByTagName("body")[0];
+				btn1.onclick = function(){
+					b.style.background = "url(../css/vip/img/1138171116-221315989622853650-221315989622857754-1_235x297_90.jpg) no-repeat";	
+				}
+				btn2.onclick = function(){
+					b.style.background = "url(../css/vip/img/1281372365-77200804649164800-77200804649164802-1_235x297_90.jpg) no-repeat";	
+				}
+			}
+		</script>
+	</head>
+	<body >
+		<button id="btn1">皮肤一</button>
+		<button id="btn2">皮肤二</button>
+	</body>
+</html>

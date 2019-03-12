@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				-o-user-select: none;
+				-webkit-user-select: none;
+				user-select: none;/*禁止选中文字*/
+			}
+			#box{
+				width: 300px;
+				height: 200px;
+				border-radius: 10px;
+				background: red;
+				overflow: hidden;
+				position: absolute;
+				top: 100px;
+				left: 100px;
+			}
+			#box p{
+				padding-left: 20px;
+				padding-top: 4px;
+				height: 26px;
+				background: blueviolet;
+			}
+		</style>
+		<script type="text/javascript">
+			/*
+			 1, 窗口拖动和关闭, 
+			 鼠标按住紫色区域时才可以拖拽窗口,
+			 点击关闭按钮就关闭窗口
+				
+			 * */
+			window.onload = function(){
+				var box = document.getElementById("box");
+				var p0 = document.getElementById("p0");
+				var gb = document.getElementById("gb");
+				//拖拽
+				p0.onmousedown = function(e){
+					var e=e||event;
+					var x = e.clientX-box.offsetLeft;
+					var y = e.clientY - box.offsetTop;
+					document.onmousemove = function(e){
+						var e=e||event;
+						box.style.left = e.clientX-x+"px";
+						box.style.top = e.clientY-y+"px";
+					}
+					document.onmouseup = function(){
+						document.onmousemove = null;
+						document.onmouseup = null;
+					}
+				}
+				//关闭
+				gb.onclick = function(){
+					box.style.display = "none";
+				}
+			}
+			
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<p id="p0"><span id="gb">关闭</span></p>
+			<div class="r"></div>
+		</div>
+	</body>
+</html>

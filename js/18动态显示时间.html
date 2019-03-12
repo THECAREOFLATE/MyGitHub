@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			//2, 获取当前时间并按括号内的格式打印（*年*月*日  星期*  *：*：*）,动态显示*年*月*日  星期*  *：*：*
+			setInterval(function(){
+				var span1 = document.getElementById("span1");
+				var d = new Date();
+				var y = d.getFullYear();
+				var m = d.getMonth();
+				var day = d.getDate();
+				var w = d.getDay();
+				var h = d.getHours();
+				var f = d.getMinutes();
+				var s = d.getSeconds();
+				switch(w){
+					case 0:
+					w="天";
+					break;
+					case 1:
+					w="一";
+					break;
+					case 2:
+					w="二";
+					break;
+					case 3:
+					w="三";
+					break;
+					case 4:
+					w="四";
+					break;
+					case 5:
+					w="五";
+					break;
+					case 6:
+					w="六";
+					break;
+				}
+				span1.innerHTML = y+"年"+(m+1)+"月"+day+"日"+" 星期"+(w)+" "+h+":"+f+":"+s;
+			},1000)
+		</script>
+	</head>
+	<body>
+		<span id="span1">2018年12月12日 星期一 11：31：30</span>
+	</body>
+</html>

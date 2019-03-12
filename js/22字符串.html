@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			//1.定义字符串
+			var str1 = "亲";
+			//2.
+			var str2 = new String("你  好");
+			//3.
+			var str3 = String("亲");
+			//字符串属性length
+			console.log(str2.length);
+			//
+			console.log(str2[0]);//可以获取
+			str2[0]="他";//不起作用
+			str2 = "hello word";//起作用
+			document.write(str2+"<br />");
+			//字符串方法
+			//1.big()		 用大号字体显示字符串
+			document.write(str2.big()+"<br />");
+			
+			//2.bold()	          使用粗体显示字符串
+			document.write(str2.bold().big()+"<br />");
+			
+			//3.fixed() 	 以打字机文本显示字符串
+			document.write(str2.fixed()+"<br />");
+			
+			//4.strike()        使用删除线来显示字符串 
+			document.write(str2.strike()+"<br />");
+			
+			//5.fontcolor(“#00f”)    使用指定颜色来显示字符串
+			document.write(str2.fontcolor("red")+"<br />");
+			
+			//6.fontsize(48)	使用指定尺寸来显示字符串
+			document.write(str2.fontsize(20)+"<br />");
+			
+			//7.link()		 将字符串显示为链接,不能改标签。
+			document.write(str2.link("https://www.baidu.com"));
+			
+			//8.sub()		 把字符串显示为下标
+			document.write(str2.sub());
+			
+			//9.sup()		 把字符串显示为上标
+			document.write(str2.sup());
+			
+			//10.str.charAt(3)    //获取下标为3的字符
+			console.log(str2.charAt(0));
+			
+			//11.str.charCodeAt(3)   //获取下标为3的字符的编码(ASCII码)
+			console.log(str2.charCodeAt(0));
+			
+			//12.String.fromCharCode(94)    //ASCII编码转换成字符
+			console.log(String.fromCharCode(120,121));
+			
+			//13.str.concat()  连接字符串
+			console.log(str2.concat("word"));
+			
+			//14.str.indexOf("abc")  查找字符串第一次出现的位置, 如果没找到则返回-1
+			console.log(str2.indexOf("o"));
+			console.log(str2.indexOf("O"));
+			
+			//15.str.lastIndexOf("abc")  查找字符串最后一次出现的位置, 如果没找到则返回-1
+			console.log(str2.lastIndexOf("o"));
+			
+			//16.str.search() 正则匹配 (返回第一次出现的位置), 如果没找到则返回-1
+			console.log(str2.search("O"));
+			console.log(str2.search(/O/gi));//注: g表示进行全局匹配，i表示匹配的时候忽略大小写
+			
+			//17. test() 方法用于检测一个字符串是否匹配某个模式.
+			var num = "12345 word";
+			//定义一个正则表达式
+			var n = /[0-9]/;
+			console.log(n.test(num[5]));
+			
+			//18.str.replace() 替换字符串
+			//var str3 = str2.replace("o","z");只能替换一个
+			var str3 = str2.replace(/o/g,"z");//替换全部
+			
+			//19.substring(start,end); //截取字符串 范围是[start, end)
+			console.log(str2.substring(6,10));//"word"
+			console.log(str2.substring(2));//"llo word"
+			
+			//20.split(separator, howmany)—根据分隔符、拆分成数组
+			var str4 = str2.split("o");//转成数组
+			var str5 = str4.join("o");//转成字符串
+		
+			//21.eval() 方法可计算某个字符串
+			var str6 = "2+3*4";
+			console.log(str6);//"2+3*4"
+			console.log(eval(str6));
+			
+			//22.toLowerCase() 方法用于把字符串转换成小写
+			var a = "aBc";
+			console.log(a.toLowerCase());
+			
+			//23.toUpperCase() 方法用于把字符串转换成大写
+			console.log(a.toUpperCase());
+		//	str4[0] = "哈";
+			console.log(str4);
+			console.log(str5);
+			console.log(str2);
+			//console.log(str2+"word");
+		//	console.log(str2[0]);
+//			console.log(typeof str1);
+//			console.log(typeof str2);
+//			console.log(typeof str3);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

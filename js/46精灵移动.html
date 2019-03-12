@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#oimg{
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		</style>
+		<script type="text/javascript">
+			//鼠标点击某处, 让精灵移动到该处
+			window.onload = function(){
+				var oimg= document.getElementById("oimg");
+				document.onclick =function(e){
+					var e = e||event;
+					var x = e.clientX;
+					var y = e.clientY;
+					oimg.style.left = x+"px";
+					oimg.style.top = y+"px";
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<img id="oimg" src="img/logo.png"/>
+	</body>
+</html>

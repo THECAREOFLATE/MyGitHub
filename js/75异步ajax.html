@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			function createXHR() {
+		        //IE7+ 谷歌, 火狐, Safari等
+		        if (window.XMLHttpRequest) {
+		                return new XMLHttpRequest();
+		        }
+		        //IE6
+		        return new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			var xhr = createXHR();
+			xhr.onreadystatechange = function(){
+				if(xhr.readyState==4 && xhr.status==200){
+					console.log(xhr.responseText);
+				}
+			}
+			xhr.open("get","js/arr.json",true);
+			xhr.send(null);
+			////取消异步请求
+			//xhr.abort();
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

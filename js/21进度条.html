@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#box1{
+				width: 200px;
+				height: 10px;
+				border: solid 1px black;
+				position: relative;
+			}
+			#box2{
+				width: 0px;
+				height: 10px;
+				position: absolute;
+				background: red;
+			}
+		</style>
+		<script type="text/javascript">
+			//使用定时器实现进度条.
+			var i = 0 ;
+			var a = 0 ;
+			var timer = setInterval(function(){
+				var span1 = document.getElementById("span1");
+				var box2= document.getElementById("box2");
+				a+=2;
+				box2.style.width =a+"px";
+				i+=1;
+				span1.innerHTML = i+"%";
+				if(i==100){
+					clearInterval(timer);
+				}
+			},100)
+		</script>
+	</head>
+	<body>
+		<div id="box1">
+			<div id="box2"></div>
+		</div>
+		<span id="span1">0%</span>
+	</body>
+</html>

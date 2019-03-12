@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			function btn(){
+				var a = document.getElementById("v1").value;
+				var b = document.getElementById("v2").value;
+				var c = document.getElementById("v3").value;
+				if(b=="+"){
+					document.getElementById("v4").value = (a-0)+(c-0);
+				}else if(b=="-"){
+					document.getElementById("v4").value = a-c;
+				}else if(b=="*"){
+					document.getElementById("v4").value = a*c;
+				}else if(b=="/"){
+					document.getElementById("v4").value = a/c;
+				}else{
+					document.getElementById("v4").value = "NaN";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" id="v1"/>
+		<input type="text" id="v2"/>
+		<input type="text" id="v3"/>=
+		<input type="text" id="v4"/>
+		<button onclick="btn()">计算</button>
+	</body>
+</html>

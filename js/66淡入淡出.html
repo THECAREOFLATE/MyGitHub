@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#oimg{
+				opacity: 0.3;
+			}
+		</style>
+		<script src="js/move.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			window.onload = function(){
+				var oimg = document.getElementById("oimg");
+				oimg.onmouseover = function(){
+					move(oimg,"opacity",1,30);
+				}
+				oimg.onmouseout = function(){
+					move(oimg,"opacity",0.3,30);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<img id="oimg" src="../css/vip/img/099cef05-1dfa-43ca-b0a7-81ae6b2c9d6e_235x297_90.jpg" />
+	</body>
+</html>

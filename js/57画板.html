@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			html,body{
+				height: 100%;
+			}
+			*{
+				margin: 0;
+				padding: 0;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				-o-user-select: none;
+				-webkit-user-select: none;
+				user-select:none;
+			}
+			#list{
+				list-style: none;
+				border: solid 1px #999;
+				width: 80px;
+				cursor: pointer;
+				display: none;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 99;
+			}
+			#list li{
+				background: #ccc;
+			}
+			#list li:hover{
+				background: white;
+			}
+			.active{
+				width: 10px;
+				height: 10px;
+				background: red;
+				border-radius: 50%;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			#box{
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var box = document.getElementById("box");
+				var list = document.getElementById("list");
+				var oli = list.getElementsByTagName("li");
+				var w = 12;
+				var h = 12;
+				var b = "red";
+				document.oncontextmenu = function(e){
+					var e = e||event;
+					var x = e.clientX;
+					var y = e.clientY;
+					list.style.left = x+"px";
+					list.style.top = y+"px";
+					list.style.display = "block";
+					//阻止默认的右键菜单
+					return false;
+				}
+				box.onmousedown = function(e){
+					console.log(list.style.display);
+					if(list.style.display=="none"){
+						document.onmousemove = function(e){
+							var e = e||event;
+							var x = e.clientX;
+							var y = e.clientY;
+							
+							//创建标签
+							var box1 = document.createElement("div");
+							box1.className = "active";
+							box1.style.width = w+"px";
+							box1.style.height = h+"px";
+							box1.style.left = x+"px";
+							box1.style.top = y+"px";
+							box1.style.background = b;
+							box.appendChild(box1);
+						}
+						document.onmouseup = function(){
+							document.onmousemove = null;
+						}
+					}	
+				}
+				//右键功能
+				for(var i=0;i<oli.length;i++){
+					oli[i].onclick = function(){
+						var a = this.innerHTML;
+						switch(a){
+							case "清空画板":box.innerHTML = "";break;
+							case "小号笔":w = 12;h=12;break;
+							case "中号笔":w = 20;h=20;break;
+							case "大号笔":w = 25;h=25;break;
+							case "超大号笔":w = 30;h=30;break;
+							case "黑色笔":b="black";break;
+							case "红色笔":b="red";break;
+							case "灰色笔":b="#ccc";break;
+							case "蓝色笔":b="blue";break;
+							case "绿色笔":b="green";break;
+							case "白色笔":b="white";break;
+							case "金色笔":b="gold";break;
+							case "黄色笔":b="yellow";break;
+						}
+					}
+				}
+				document. onclick= function(e){
+					list.style.display = "none";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<ul id="list" style="display: none;">
+			<li>清空画板</li>
+			<li>小号笔</li>
+			<li>中号笔</li>
+			<li>大号笔</li>
+			<li>超大号笔</li>
+			<li>黑色笔</li>
+			<li>红色笔</li>
+			<li>蓝色笔</li>
+			<li>金色笔</li>
+			<li>绿色笔</li>
+			<li>白色笔</li>
+		</ul>
+		<div id="box"></div>
+	</body>
+</html>

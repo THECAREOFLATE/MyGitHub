@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 300px;
+				height: 300px;
+				margin: 50px auto;
+				background: #999;
+				position: relative;
+			}
+			#box1{
+				width: 20px;
+				height: 20px;
+				background: red;
+				position: absolute;
+				top: 10px;
+				left: 10px;
+			}
+			#box2{
+				width: 20px;
+				height: 20px;
+				background: blue;
+				position: absolute;
+				top: 10px;
+				left: 100px;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var box = document.getElementById("box");
+				var box1 = document.getElementById("box1");
+				var box2 = document.getElementById("box2");
+				var x = 2 ;
+				var y = 1 ;
+				var x1 = 2 ;
+				var y1 = 2 ;
+				setInterval(function(){
+					//先获取小球位置
+					var left1 = box1.offsetLeft;
+					var top1 = box1.offsetTop ;
+					var left2 = box2.offsetLeft;
+					var top2 = box2.offsetTop ;
+					//碰到右边
+					if(left1+box1.offsetWidth>=box.offsetWidth){
+						x=Math.random()*2*(-1);
+					}
+					//碰到下边
+					if(top1+box1.offsetHeight>=box.offsetHeight){
+						y=Math.random()*2*(-1);
+					}
+					//碰到左边
+					
+					if(left1<=0){
+						console.log(left1);
+						x*=-1;
+					}
+					//碰到上边
+					if(top1<=0){
+						y*=-1;
+					}
+					//蓝色小球
+					//碰到右边
+					if(left2+box2.offsetWidth>=box.offsetWidth){
+						x1=Math.random()*2*(-1);
+					}
+					//碰到下边
+					if(top2+box2.offsetHeight>=box.offsetHeight){
+						y1=Math.random()*2*(-1);
+					}
+					//碰到左边
+					
+					if(left2<=0){
+						x1*=-1;
+					}
+					//碰到上边
+					if(top2<=0){
+						y1*=-1;
+					}
+					//两球碰撞
+					if(Math.abs(left1-left2)<20 && Math.abs(top1-top2)<20){
+						x*=-1;
+						y*=-1;
+						x1*=-1;
+						y1*=-1;
+					}
+					//小球运动
+					box1.style.left = left1+x+"px";
+					box1.style.top = top1+y+"px";
+					box2.style.left = left2+x1+"px";
+					box2.style.top = top2+y1+"px";
+				},5)
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<div id="box1"></div>
+			<div id="box2"></div>
+		</div>
+	</body>
+</html>

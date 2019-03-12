@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+		window.onload =function(){
+			var box = document.getElementById("box");
+			var list = document.getElementById("list");
+			//1.attributes属性: 返回该元素节点的属性节点集合。
+			console.log(box.attributes);
+			console.log(box.attributes.length);
+			console.log(box.attributes[0]);
+			
+			//nodetype 节点类型 1表示元素节点，2表示属性节点，3表示文本节点
+			console.log(box.attributes[0].nodeType);//2
+			
+			//nodeName 属性名称
+			console.log(box.attributes[1].nodeName);//class
+			
+			//nodeValue 属性值
+			console.log(box.attributes[1].nodeValue);//"obox"
+			
+			//box.attributes['id']; //返回属性名称为id的节点
+			console.log(box.attributes["id"]);//id="box"
+			
+			//box.attributes.getNamedItem('id'); //返回属性名称为id的节点
+			console.log(box.attributes.getNamedItem("id"));//id="box"
+		
+			//childNodes: 子节点集合
+			console.log(list.childNodes);
+			console.log(list.childNodes.length);
+			
+			//firstChild 用于获取当前元素节点的第一个子节点，相当于 childNodes[0]；
+			console.log(list.firstChild);
+			
+			//lastChild 用于获取当前元素节点的最后一个子节点，相当于 childNodes[box.childNodes.length- 1]。
+			console.log(list.lastChild);
+			
+			////获取最后一个子节点的文本内容
+			console.log(list.childNodes[5].innerHTML);
+			console.log(list.childNodes[5].attributes[0].nodeValue);
+		
+			//parentNode 属性返回该节点的父节点，
+			console.log(list.parentNode);
+			
+			//previousSibling 属性返回该节点的前一个同级节点，
+			console.log(list.previousSibling);
+			
+			//nextSibling 属性返回该节点的后一个同级节点。 
+			console.log(list.nextSibling);
+			
+			// ownerDocument 属性返回该节点的文档对象根节点
+			console.log(list.ownerDocument);
+			
+			//
+		}
+		
+		
+			
+		</script>
+	</head>
+	<body>
+		<div id="box" class="obox" title="盒子">测试DIV</div>
+		<ul id="list">
+			<li>1</li>
+			<li>2</li>
+			<li class="lastli">3</li>
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				var b = document.getElementById("b");
+				//添加事件
+				b.onclick =function(){
+					
+				}
+				//2.
+				b.onclick = fn;
+				function fn(){
+					console.log("a");
+				}
+			}
+			//写在onload外边
+			function btn(){
+				console.log("内连模式");
+			}
+		</script>
+	</head>
+	<body>
+		<button id="box" onclick="btn()">内联模式</button>
+		<button id="b">按钮</button>
+	</body>
+</html>

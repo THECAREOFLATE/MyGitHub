@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#pp{
+				color: red;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<p id="pp">很关键的双方各得设计费过段时间</p>
+		<p id="p2">与共和党会更好</p>
+		<h1>2018年12月17日 星期一 10时18分30秒</h1>
+		<button onclick="btn()">改变颜色</button>
+	</body>
+	<script type="text/javascript">
+			function btn(){
+				//获取元素
+				var pp = document.getElementById("pp");
+				//改变样式
+				pp.style.color = "blue";
+				pp.style.background = "red";
+				pp.style.fontSize = "30px";//fontSize 驼峰写法
+				//改变文字
+				pp.innerHTML = "星期一";
+			}
+			var i =12 ; 
+			var p2 = document.getElementById("p2");
+			p2.style.color = "blue";
+			setInterval(function(){
+				i++;
+				
+				p2.style.fontSize = i+"px";
+			},1000)
+		</script>
+</html>

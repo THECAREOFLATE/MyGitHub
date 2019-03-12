@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			//1.弹出框
+			//window.alert("123");
+			
+			//2.带确定、取消按钮的弹出框
+			//window.confirm("123");
+			/*if(confirm("确定/取消")){
+				alert("点击了确定按钮");
+			}else{
+				alert("点击了取消按钮");
+			}
+			*/
+			
+			//3.  带输入的提示框
+			//var num = window.prompt("请输入一个数字")
+			//alert(num);
+			
+			//4.open,_parent在当前窗口打开页面
+			function btn(){
+				//window.open("https://www.baidu.com");
+				window.open("https://www.baidu.com","baidu","width=300,height=200,top=50,left=500");
+			}
+			var str = "闪电发货过军过付付付付付"+
+			"付付付付付付付付付付付付付付付付付付付付付付付付付付付付付付付付付付付付付";
+			
+			//5.创建延时器
+			//1.
+			setTimeout("console.log('a')",5000);
+			//2.
+			setTimeout(function(){
+				console.log("b");
+			},5000)
+			//3.
+			var tt = setTimeout(fn,5000);
+			function fn(){
+				console.log("c");
+			}
+			//定时器
+			var timer = setInterval(function(){
+				console.log("d");
+			},1000)
+			//关闭延时器
+			clearInterval(timer);//关闭定时器
+			clearTimeout(tt);//关闭延时器
+			
+			//7.close() 关闭浏览器
+			setTimeout(function(){
+				window.close();
+			},3000)
+			
+			//8.打印对话框
+			window.print();
+		</script>
+	</head>
+	<body>
+		<p onclick="btn()">百度一下</p>
+	</body>
+</html>

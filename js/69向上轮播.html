@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#obox{
+				width: 520px;
+				height: 250px;
+				margin: 50px auto;
+				border: solid 2px black;
+				position: relative;
+				overflow: hidden;
+			}
+			#box{
+				width:400px;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+			}
+			img{
+				width: 400px;
+				height: 250px;
+				display: block;
+			}
+			#list{
+				width: 120px;
+				position: absolute;
+				top: 0px;
+				left: 400px;
+				list-style: none;
+			}
+			#list li{
+				width: 120px;
+				height: 83px;
+				background: yellow;
+				line-height: 83px;
+				text-align: center;
+			}
+			#back{
+				height: 30px;
+				width: 40px;
+				position: absolute;
+				top:110px ;
+			}
+			#next{
+				height: 30px;
+				width: 40px;
+				position: absolute;
+				top:110px ;
+				left: 360px;
+			}
+		</style>
+		<script src="js/move.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			window.onload = function(){
+				var box = document.getElementById("box");
+				var oimg = box.getElementsByTagName("img");
+				var list = document.getElementById("list");
+				var oli = document.getElementsByTagName("li");
+				var back = document.getElementById("back");
+				var next = document.getElementById("next");			
+				//初始化
+				oli[0].style.background = "red";
+				//开始定时器
+				var i = 0;
+				var timer = setInterval(t,3000);
+				function t(){
+					i++;
+					if(i==oimg.length){
+						i=0;
+					}
+					fn();
+					move(box,"top",-oimg[0].offsetHeight*i,30);
+				}
+				//右侧按钮样式
+				function fn(){
+					for(var j=0;j<oli.length;j++){
+						oli[j].style.background = "yellow";
+					}
+					oli[i].style.background = "red";
+				}
+				//点击右侧按钮
+				for(var k=0;k<oli.length;k++){
+					oli[k].index = k;
+					oli[k].onclick = function(){
+						clearInterval(timer);
+						i = this.index;
+						fn();
+						move(box,"top",-oimg[0].offsetHeight*i,30);
+						//重新开启定时器
+						timer = setInterval(t,3000);
+					}
+				}
+				//back
+				back.onclick = function(){
+					clearInterval(timer);
+					i--;
+					if(i==-1){
+						i=oimg.length-1;
+					}
+					fn();
+					move(box,"top",-oimg[0].offsetHeight*i,30);
+					//重新开启定时器
+					timer = setInterval(t,3000);
+				}
+				//next
+				next.onclick =function(){
+					clearInterval(timer);
+					i++;
+					if(i==oimg.length){
+						i=0;
+					}
+					fn();
+					move(box,"top",-oimg[0].offsetHeight*i,30);
+					//重新开启定时器
+					timer = setInterval(t,3000);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="obox">
+			<div id="box">
+				<img src="img/b.jpg" />
+				<img src="img/c.jpg" />
+				<img src="img/d.jpg" />
+			</div>
+			<ul id="list">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+			</ul>
+			<button id="back">back</button>
+			<button id="next">next</button>
+		</div>
+	</body>
+</html>

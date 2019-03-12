@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			//1.new 创建对象
+			var obj = new Object();
+			//创建属性字段
+			obj.name = "张三";
+			obj.age = 18;
+			//方法
+			obj.fn = function(){
+				alert(this.name);
+			}
+			//2.不建议
+			var obj1 = Object();
+			
+			//3.字面量创建对象
+			var obj2 = {
+				"name":"李四",
+				"age":82,
+				"fn":function(){
+					alert(obj2.name);
+				}
+			};
+			var obj4 = {
+				name:"李四",
+				age:82
+			};
+			//访问对象属性
+			console.log(obj2.name);//点语法
+			console.log(obj2["age"]);//中括号表示法
+			
+			// 使用 delete 删除对象属性 
+			delete obj.name;
+			obj.fn();
+			obj2.fn();
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

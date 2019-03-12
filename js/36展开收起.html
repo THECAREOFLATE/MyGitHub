@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.hide{
+				display: none;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload= function(){
+				var btn = document.getElementsByTagName("button");
+				for(var i=0;i<btn.length;i++){
+					btn[i].onclick = function(){
+						var pp = this.parentNode.getElementsByTagName("p")[0];
+						console.log(pp.innerHTML);
+						if(this.innerHTML == "收起"){
+							pp.style.display = "none";
+							this.innerHTML = "展开";
+						}else{
+							pp.style.display = "block";
+							this.innerHTML = "收起";
+						}
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div class="box">
+			<h3>1.什么是取款连</h3>
+			<p>1sdjhfgjksdfkjsdfh海景是大V国海就风高放火三个地方后结果山东黄金</p>
+			<span>2018-12-27</span>
+			<button>收起</button>
+		</div>
+		<div class="box">
+			<h3>2.什么是取款连</h3>
+			<p class="hide">2sdjhfgjksdfkjsdfh海景是大V国海就风高放火三个地方后结果山东黄金</p>
+			<span>2018-12-27</span>
+			<button>展开</button>
+		</div>
+		<div class="box">
+			<h3>3.什么是取款连</h3>
+			<p class="hide">3sdjhfgjksdfkjsdfh海景是大V国海就风高放火三个地方后结果山东黄金</p>
+			<span>2018-12-27</span>
+			<button>展开</button>
+		</div>
+	</body>
+</html>

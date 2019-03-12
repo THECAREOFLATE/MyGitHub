@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				var box = document.getElementById("box");
+				var oimg = box.getElementsByTagName("img");
+				var bigimg = document.getElementById("bigimg");
+				for(var i=0;i<oimg.length;i++){
+					oimg[i].onclick =function(){
+						bigimg.src = this.src;
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<img src="../css/vip/img/0a9029be-794b-4c7f-9b0c-7842a4a98fd8_t_235x297_90.jpg" />
+			<img src="../css/vip/img/0b870b90-a80d-4301-befd-7804c61483bc_235x297_90.jpg" />
+			<img src="../css/vip/img/105797131541469479699_235x297_90.jpg" />
+			<img src="../css/vip/img/152085231543287530616_235x297_90.jpg" />
+			<img src="../css/vip/img/2bd29e99-f132-4241-9b9e-a6b49157cdb6_235x297_90.jpg" />
+		</div>
+		<img abc="" id="bigimg" src="../css/vip/img/0a9029be-794b-4c7f-9b0c-7842a4a98fd8_t_235x297_90.jpg" />
+	</body>
+</html>

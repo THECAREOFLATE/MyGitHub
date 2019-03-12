@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			div{
+				width: 100px;
+				height: 100px;
+				background: red;
+				text-align: center;
+				line-height: 100px;
+				margin-top: 20px;
+			}
+		</style>
+		<script src="js/move.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//有四个红色的div, 当鼠标移入时, 让红色div以缓冲速度变宽, 当鼠标移开时, 让红色div以缓冲速度恢复到原来的宽度;
+			window.onload = function(){
+				var obox = document.getElementsByTagName("div");
+				for(var i=0;i<obox.length;i++){
+					obox[i].onmouseover = function(){
+						move(this,"width",500,40);
+					}
+					obox[i].onmouseout = function(){
+						move(this,"width",100,40);
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+	</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			function btn(){
+				//获取特定元素的值
+				var n = document.getElementById("val").value;
+				if(n%2==0){
+					alert(n+"是偶数！");
+				}else{
+					alert(n+"是奇数！");
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" id="val" />
+		<button onclick="btn()">判断</button>
+	</body>
+</html>

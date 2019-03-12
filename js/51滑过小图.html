@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				background: black;
+			}
+			#box{
+				width: 590px;
+				height: 475px;
+				border-radius: 10px;
+				background: white;
+				margin: 50px auto;
+			}
+			#box img{
+				width: 100px;
+				height: 100px;
+				float: left;
+				margin-left: 15px;
+				margin-top: 15px;
+			}
+			#box .bigimg1{
+				width: 330px;
+				height: 330px;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var bigimg1 = document.getElementsByClassName("bigimg1")[0];
+				var oimg = document.getElementsByClassName("bigimg");
+				for(var i=0;i<oimg.length;i++){
+					oimg[i].onmouseover = function(){
+						bigimg1.src = this.src;
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<img class="bigimg1" src="img/a.jpg" />
+			<img class="bigimg" src="img/a.jpg" />
+			<img class="bigimg" src="img/b.jpg" />
+			<img class="bigimg" src="img/c.jpg" />
+			<img class="bigimg" src="img/d.jpg" />
+			<img class="bigimg" src="img/e.jpg" />
+			<img class="bigimg" src="img/f.jpg" />
+			<img class="bigimg" src="img/g.jpg" />
+			<img class="bigimg" src="img/h.jpg" />
+			<img class="bigimg" src="img/i.jpg" />
+			<img class="bigimg" src="img/j.jpg" />
+			<img class="bigimg" src="img/k.jpg" />
+		</div>
+	</body>
+</html>

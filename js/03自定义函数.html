@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			document.write("呵呵");	
+			//定义一个函数
+			function fn(){
+				document.write("呵呵");	
+			}
+			//调用函数
+			fn();
+			//计算2+8的结果。
+			//a,b叫做形参
+			function fn1(a,b){
+				return a+b ;
+			}
+			//2,8叫做实参
+			console.log(fn1(2,8));
+			
+			//1, 写一个函数计算1到100的和, 并返回结果打印出来;(n为函数参数)
+			function fn2(n){
+				var s = 0; 
+				for(var i=1;i<=n;i++){
+					s+=i;
+				}
+				console.log(s);
+			}
+			fn2(100,200,"zhansgan");
+			
+			//练习：向一个函数传入不定数量的数值求和。
+			function fn3(){
+				//内置数组arguments
+				console.log(arguments);
+				//长度length
+				console.log(arguments.length);
+				//访问数组元素
+				console.log(arguments[0]);
+				//访问数组的最后一个元素
+				console.log(arguments[arguments.length-1]);
+				var s = 0 ;
+				for(var i=0;i<arguments.length;i++){
+					s+=arguments[i];
+				}
+				console.log(s);
+			}
+			fn3(1,12,13,14,15,16,17,18,19);
+			
+			//PS;在一般传值调用的机制中只能把实参传送给形参，而不能把形参的值反向地传送给实参。因此在函数调用过程中，形参值发生改变，而实参中的值不会变化。
+			function  addNum(n){
+				 n += 5 
+			}
+			var  a=10;
+			addNum(a);           
+		    alert(a);// 10
+
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

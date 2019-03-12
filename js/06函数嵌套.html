@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+//				函数内部可以再包含其他函数 
+//函数之间允许相互调用，也允许向外调用, 不可以调用同级函数的嵌套函数
+				function a(){
+					console.log("a");
+					function b(){
+						console.log("b");
+					}
+					b();
+				}
+				//b();b is not defined"
+				function c(){
+					console.log("c");
+					a();
+					b();
+				}
+				c();
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

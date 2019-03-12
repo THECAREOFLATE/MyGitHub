@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			//定义变量
+			var box;
+			var box2 = null;
+			var name = "张三";
+			//javascript区分大小写
+			var age =18,sex = "男";
+			var AGe = "李四";
+			//typeof 输出变量的类型
+			console.log(typeof name);
+			console.log(typeof age);
+			console.log(typeof AGe);
+			//"undefined"
+			console.log(box);
+			console.log(typeof box2);//"object"
+			//比较它们的值
+			console.log(box==box2);//"true"
+			//比较它们的值和类型
+			console.log(box===box2);
+			//函数Boolean()
+			var str = "王五";
+			console.log(typeof str);
+			var str2 = Boolean(str);
+			console.log(typeof str2);
+			//number
+			var num = .8;//不推荐
+			console.log(typeof num);
+			var num2 = 4.01e9;//科学计数法
+			console.log(num2);
+			var num3 = -12/0;
+			console.log(num3)
+			//isNaN用来判断这个值到底是不是 NaN
+			console.log(isNaN(num));
+			console.log(isNaN(name/num));
+			//算术运算符（+，-, *, /, %(取余数)）
+			//+如果都是numBer类型，则进行加法运算，否则拼接
+			var num4 = "马六"+20;
+			console.log(num4);
+			
+			// parseInt()      是把其它类型转换为整型；
+			var num5 = 18.8;
+			var num6 = parseInt(num5);
+			//  parseFloat()  是把其它类型转换为浮点型（小数）
+			var num7 = parseFloat(num5);
+			console.log(num6);
+			console.log(num7);
+			//四舍五入Math.round
+			console.log(Math.round(num5));
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

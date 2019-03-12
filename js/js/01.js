@@ -1,0 +1,1 @@
+document.write("广西60周年大庆！");

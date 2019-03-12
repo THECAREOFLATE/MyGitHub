@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.active{
+				color: blue;
+				text-decoration: underline;
+				font-weight: 900;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var inp = document.getElementsByTagName("input");
+				var btn = document.getElementById("btn");
+				var tab = document.getElementById("tab");
+				btn.onclick = function(){
+					//创建标签
+					var tr0 = document.createElement("tr");
+					var td1 = document.createElement("td");
+					var td2 = document.createElement("td");
+					var td3 = document.createElement("td");
+					var td4 = document.createElement("td");
+					//赋值
+					td1.innerHTML = inp[0].value;
+					td2.innerHTML = inp[1].value;
+					td3.innerHTML = inp[2].value;
+					td4.innerHTML = "删除";
+					//插入表格
+					tr0.appendChild(td1);
+					tr0.appendChild(td2);
+					tr0.appendChild(td3);
+					tr0.appendChild(td4);
+					//添加属性
+					td4.className = "active";
+					tr0.setAttribute("align","center");
+					tab.appendChild(tr0);
+					td4.onclick = function(){
+						this.parentNode.parentNode.removeChild(this.parentNode);
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<label for="user">ID:</label>
+		<input type="text" id="user" />
+		<label for="name">姓名：</label>
+		<input type="text" id="name" />
+		<label for="phone">电话</label>
+		<input type="text" id="phone"/>
+		<button id="btn">保存</button>
+		<table border="1" id="tab">
+			<tr>
+				<th width="100">ID</th>
+				<th width="100">姓名</th>
+				<th width="130">电话</th>
+				<th width="100">操作</th>
+			</tr>
+		</table>
+	</body>
+</html>

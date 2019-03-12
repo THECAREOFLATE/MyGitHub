@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul{
+				list-style: none;
+				width: 360px;
+				height: 590px;
+				background: #ccc;
+				margin: 20px auto;
+			}
+			ul li{
+				width: 98px;
+				height: 58px;
+				padding: 20px 0px;
+				float: left;
+				border: solid 1px #999;
+				background: #999;
+				margin-left: 15px;
+				margin-top: 15px;
+				color: white;
+				font-size: 20px;
+				text-align: center;
+			}
+			#fristli{
+				border: solid 1px red;
+				background: white;
+				color: red;
+			}
+			#lastli{
+				width: 330px;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var list = document.getElementById("list");
+				var oli = document.getElementsByTagName("li");
+				for(var i=0;i<oli.length-1;i++){
+					oli[i].index= i;
+					//oli[0].index =0;
+					//oil[1].index= 1;
+					oli[i].onclick = function(){
+						console.log(this.index);
+						for(var j=0;j<oli.length-1;j++){
+							oli[j].style.background = "#999";
+							oli[j].style.color = "white";
+							oli[j].style.border= "solid 1px #999";
+						}
+						this.style.background = "white";
+						this.style.color = "red";
+						this.style.border= "solid 1px red";
+						oli[oli.length-1].innerHTML = this.index+1+"月份好";
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<ul id="list">
+			<li id="fristli">1<p>Jan</p></li>
+			<li>2<p>Jan</p></li>
+			<li>3<p>Jan</p></li>
+			<li>4<p>Jan</p></li>
+			<li>5<p>Jan</p></li>
+			<li>6<p>Jan</p></li>
+			<li>7<p>Jan</p></li>
+			<li>8<p>Jan</p></li>
+			<li>9<p>Jan</p></li>
+			<li>10<p>Jan</p></li>
+			<li>11<p>Jan</p></li>
+			<li>12<p>Jan</p></li>
+			<li id="lastli">1月份好！</li>
+		</ul>
+	</body>
+</html>

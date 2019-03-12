@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			function fn(a,b){
+				var d = new Date(a);
+				var d1 = new Date(b);
+				var num = d.getTime();
+				var num2 = d1.getTime();
+				console.log(parseInt((num-num2)/(24*60*60*1000))+1+"天");
+				console.log(num);
+				console.log(num2);
+			}
+			fn("2019-1-1","2018-12-17");
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

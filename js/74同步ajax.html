@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			function createXHR() {
+		        //IE7+ 谷歌, 火狐, Safari等
+		        if (window.XMLHttpRequest) {
+		                return new XMLHttpRequest();
+		        }
+		        //IE6
+		        return new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			//实例化XMLHttpRequest
+			var xhr = createXHR();
+			console.log(xhr);
+			//它接受三个参数：要发送的请求类型(get、post)、请求的 URL 和表示是否异步
+			xhr.open("GET","js/arr.json",false);
+			xhr.send(null);
+			console.log("状态码："+xhr.status);
+			console.log(xhr.responseText);
+			console.log(xhr.responseXML);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

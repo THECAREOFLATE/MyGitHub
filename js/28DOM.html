@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			textarea{
+				font-size: 12px;
+			}
+		</style>
+		<script type="text/javascript">
+			//html加载完毕后执行onload事件
+			window.onload = function(){
+				//1.节点种类
+				//div 元素节点
+				//class="box" 属性节点
+				//这是一个div标签 文本节点
+				
+				//2.获取元素节点
+				var obox = document.getElementById("obox");
+				console.log(obox);
+				
+				//3.getElementsByTagName()方法将返回一个数组
+				var oli = document.getElementsByTagName("li");
+				console.log(oli);
+				
+				//4.通过父元素获取对应的子元素
+				var list1 = document.getElementById("list1");
+				var list1_oli = list1.getElementsByTagName("li");
+				console.log(list1_oli);
+				
+				//5. getElementsByName()方法可以获取相同名称(name)的元素，返回一个对象数组 
+				var inp = document.getElementsByName("like");
+				console.log(inp);//返回数组
+				
+				//6.getElementsByClassName()方法可以获取相同名称(class)的元素，返回一个对象数组 
+				var h = document.getElementsByClassName("h");
+				console.log(h);
+				
+				
+				//其它属性(点语法可以拿到固有属性，自定义属性不行)
+				console.log(oli[2].innerHTML);
+				console.log(obox.id);//"obox"
+				console.log(obox.className);//"obox"
+				console.log(obox["title"]);//"盒子"
+				console.log(obox.date-name);//"undefined"
+				console.log(obox.abc);//"undefined"
+				
+				//getAttribute()方法将获取元素中某个属性的值。它和直接使用点语法(.属性)获取属性值的方法有一定区别。
+				console.log(obox.getAttribute("id"));//"obox"
+				console.log(obox.getAttribute("data-Name"));//"like"
+				console.log(obox.getAttribute("abc"));//1234
+				//设置setAttribute()
+				obox.setAttribute("class","box1");//覆盖
+				obox.setAttribute("aaa","bbb");//添加
+				
+				//removeAttribute() 可以移除 HTML 属性。
+				obox.removeAttribute("title");
+				
+				//box.innerHTML:也就是从对象的起始位置到终止位置的全部内容,包括Html标签。
+				console.log(obox.innerHTML);//"<p>这是一个div标签</p>"
+				//box.innerText:从起始位置到终止位置的内容, 但它去除Html标签
+				//alert(obox.innerText);//"这是一个div标签
+				//box.outerHTML:除了包含innerHTML的全部内容外, 还包含对象标签本身。
+				console.log(obox.outerHTML);//"<div id="obox" class="box1" data-name="like" abc="1234" aaa="bbb"><p>这是一个div标签</p></div>"
+				//绑定事件
+				var btn = document.getElementById("btn");
+				btn.onclick = function(){
+					console.log("我被点击了");
+				}
+				var t = document.getElementsByTagName("textarea")[0];
+				console.log(t.style.color);
+				console.log(obox.style);
+				t.style.fontSize = "30px";
+			}
+			function fn(){
+				alert("我被点击了");
+			}
+		</script>
+	</head>
+	<body>
+		<div id="obox" title="盒子" class="box" data-name = "like" abc="1234"><p>这是一个div标签</p></div>
+		<ul id="list1">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+		<ul id="list2">
+			<li>11</li>
+			<li>22</li>
+			<li>33</li>
+			<li>44</li>
+		</ul>
+		<input type="text" name="like" value="1"/>
+		<input type="text" name="like" value="2"/>
+		<input type="text" name="like" value="3"/>
+		<input type="text" name="like" value="5"/>
+		<h1 class="h">1</h1>
+		<h2 class="h">2</h2>
+		<h3 class="h">3</h3>
+		<button onclick="fn()">按钮</button>
+		<button id="btn">按钮2</button>
+		<textarea style="font-size: 12px;">fkldjgskldjf</textarea>
+	</body>
+</html>

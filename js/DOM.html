@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		
+			#BB{
+				width: 150px;
+				height: 150px;
+				background: #574194;
+				
+			}
+		</style>
+		
+		<script>
+			//写一个定时器, 每隔1秒修改一次div内文字颜色和文字大小.最开始这个文字是默认大小, 开启定时器后文字大小开始增大, 
+			//当增大了6次以后, 文字大小开始缩小, 缩小6次, 文字再开始增大…效果如下图:
+			window.onload=function(){
+			 var BB=document.getElementById("BB");
+			 var s=16;
+			 var n=2;
+			 var i=0;
+			 setInterval(function(){
+			 	s=s+n;
+			 	i++;
+			 	BB.style.color="rgb("+parseInt(Math.random()*256)+","+parseInt(Math.random()*256)+","+parseInt(Math.random()*256)+")";
+			    BB.style.fontSize=s+"px";
+			    if(i==6){
+			    	n=n*-1;
+			    	i=0;
+			    }
+			 },1000)
+			}
+		</script>
+	</head>
+	<body> 
+
+		<hr />
+		<div id="BB">文字变化</div>
+	</body>
+</html>
